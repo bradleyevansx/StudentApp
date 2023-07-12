@@ -1,0 +1,33 @@
+{
+  "routes": [
+    {
+      "route": "/settings/*",
+      "rewrite": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/new-sessions/*",
+      "rewrite": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/manage-sessions/*",
+      "rewrite": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/login/*",
+      "rewrite": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/register/*",
+      "rewrite": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/*",
+      "rewrite": "/index.html"
+    }
+  ]
+}
