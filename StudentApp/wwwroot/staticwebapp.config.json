@@ -2,28 +2,23 @@
   "routes": [
     {
       "route": "/settings/*",
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     },
     {
       "route": "/new-sessions/*",
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     },
     {
       "route": "/manage-sessions/*",
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     },
     {
       "route": "/login/*",
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     },
     {
       "route": "/register/*",
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     },
     {
       "route": "/*",
