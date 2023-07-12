@@ -129,6 +129,7 @@
     private async Task TryLoginAsync()
     {
         var response = await Model.TryLoginAsync();
+        Model.User = new();
 
         if (response)
         {
