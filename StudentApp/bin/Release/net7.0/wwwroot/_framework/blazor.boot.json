@@ -7,19 +7,12 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "Azure.Core.dll": "sha256-fW2jAmJmv8YHFxjx4YJKAoPatRZucamydE5137aZOcE=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-QP+9ib2tHpYrkwMTIkh60aO49DKTGwJBAA5RaITVGDE=",
       "Microsoft.AspNetCore.Components.dll": "sha256-sCo2GmgrMtZQSY+teWT1XlU93C\/x75FDwL155zjC5TI=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-x+mgWzFuhFpGICdKYW5hmKJ3HUUw4GrXhMFi17T4JIM=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-Ei00BXaWruLv+xVMalsdwmkdA9I3gTNUO88KMICpKHs=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-y4\/Dp2h9\/nFyV5IUQkYwJPWx\/wH1V0beaR4QM+E4WlU=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-hNGwl2DXpHcUkSaHjRqlYWL2b46bTsSaCPeIvDSTmSo=",
-      "Microsoft.Azure.Cosmos.Client.dll": "sha256-uEdyFaWt9lOpJXrQBo0Vzk3qPbrW8Ttc6nPgAB5RnIw=",
-      "Microsoft.Azure.Cosmos.Core.dll": "sha256-4JHLcLlFzzKltgTK1ErfV4EAzNJ2Su2NRduF76XGmx0=",
-      "Microsoft.Azure.Cosmos.Direct.dll": "sha256-kIVpVlKSof6DBSIZf86B6sQcCW9HbvUmlWuy9BaQg9g=",
-      "Microsoft.Azure.Cosmos.Serialization.HybridRow.dll": "sha256-kivyhvYTOgbcSnXg\/HOFDK9O12unQF2y2aPlvWG06nc=",
-      "Microsoft.Bcl.AsyncInterfaces.dll": "sha256-NktPvm6CrEWy+t6kSiltKtuBb\/yT9TVcx4h01\/zoF+Q=",
-      "Microsoft.Bcl.HashCode.dll": "sha256-y5+O+HE1PNgSn0TwPo3hH4YjhuwltS3gYIkrSTD2QOs=",
       "Microsoft.Extensions.Configuration.dll": "sha256-PqQvp77oZ4+uuy2ElXk8AU9I6RfZSf18UGTrd4rulOo=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-CnS3b9EMFQmETBUVEgtcron4DBsfFdcVt3zfCP6Uflg=",
       "Microsoft.Extensions.Configuration.Binder.dll": "sha256-7GY9+7Cm0Z8DJ+JCFwgCx9OfFtUvXlFHaaLlBYmXfIE=",
@@ -36,15 +29,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-q4ruoDSCjV\/QJY9ZkzV6uxvEvZUVrDbyUjU3SSh5SlE=",
       "Microsoft.JSInterop.dll": "sha256-mVa0kFJEOfNCeM6spj6DE0H37nHbk++P5R+f6Hi4UQ8=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-NT4DzRkrAn8\/DnLS4W87pBIa3J0w29RPFsnSWcmL9Tc=",
-      "Microsoft.Win32.SystemEvents.dll": "sha256-yklb9shrfwktYkkoEBmFqUFTLRSdzYrP6hcPilO+iFA=",
-      "Newtonsoft.Json.dll": "sha256-GViDVnAQuA8FMpwwB\/9uaspcQefOSU1hpfK4bC07Eds=",
-      "System.Configuration.ConfigurationManager.dll": "sha256-SyZcn69Ju8196bOWd6jbATVgq2B2BRWvy5adNMTwGUE=",
-      "System.Drawing.Common.dll": "sha256-mNB+ax59NkGoYIo2Cz3Cc\/6KD3iSa24eX2eaegdNSR8=",
       "System.IO.Pipelines.dll": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
-      "System.Memory.Data.dll": "sha256-KTyl2GNY+yzgDaAsY+78s0Ron8DGNrYcl8PxsVqAqlE=",
-      "System.Security.Cryptography.ProtectedData.dll": "sha256-0YZFPuu6IeGakOT+oWwRw99Z7ZYQIBxaPG1ja5hk2EA=",
-      "System.Security.Permissions.dll": "sha256-YgaMD2v\/sOtOwcakWhZ4TK7nVl9sVATYNCCJ9P9LNxI=",
-      "System.Windows.Extensions.dll": "sha256-gQ6HZ9AtcK8XO8M8wQSP8xp98BX9Rs9COjCcyJxQ3Gk=",
       "Microsoft.CSharp.dll": "sha256-U6GApEYCN2mL3EI15VnWWUFsotGT\/ewpFLyNWspdrIE=",
       "Microsoft.VisualBasic.Core.dll": "sha256-PvfX4mKCDhgAYT87QXFsfjILPfoWt544sKvQoQO88BQ=",
       "Microsoft.VisualBasic.dll": "sha256-NarXFrnwur4ZHt6YiGPHsbqW+L2\/aVe8wZ7YzdwcpiI=",
@@ -213,15 +198,13 @@
       "mscorlib.dll": "sha256-t1RT9mknsQ54H+sVa1vtMhjv3D8ZjiAGoLzHvuIObPw=",
       "netstandard.dll": "sha256-5SHKPh1PcuJjq4lIo7ymdIyhb9d3++oMAjr46auhUSc=",
       "System.Private.CoreLib.dll": "sha256-eH+XIsCUG5oZ0k8AIzNtRLTCLiV\/8Zv0RFCPMsIkdYY=",
-      "WebAPI.Domain.dll": "sha256-mawoDKWgw1BDFIqskE7RlnqlC1kSiebStr23u4x13Hs=",
-      "StudentApp.dll": "sha256-NLe9Hsza6u+v7zik6mtcrEWeZiX+0uaV\/l8VZ7l2wXA="
+      "StudentApp.dll": "sha256-LBivI0Yx0xXaC+2mtHxyJkMqDIdYFdUS6vxdxQOZJu8="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "WebAPI.Domain.pdb": "sha256-LyIFWFzyv8yMwzBWs9tQZAO1db8zE3I4peKyuIee4zU=",
-      "StudentApp.pdb": "sha256-AR3KucSGh6eOn5d28wzNKyOm6Hvs3yuX3gk3txCV1ig="
+      "StudentApp.pdb": "sha256-Sbo2kcFHGZkPqAoTnXpZbif+kCzo58+DjM4GggcqI94="
     },
     "runtime": {
       "dotnet.7.0.9.y7z3k0as4s.js": "sha256-dUIY5Mz0ozZWqtTfBb7ArJKbdh5IIp8BXeq6UjK4u\/c=",
