@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentApp", "StudentApp\StudentApp.csproj", "{F38C3833-1B76-49FC-965E-65DAD57714EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Domain", "..\..\WebAPITest\WebAPI.Domain\WebAPI.Domain.csproj", "{D811D30B-A543-4053-804D-F2F23C76A5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F38C3833-1B76-49FC-965E-65DAD57714EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38C3833-1B76-49FC-965E-65DAD57714EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38C3833-1B76-49FC-965E-65DAD57714EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38C3833-1B76-49FC-965E-65DAD57714EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D811D30B-A543-4053-804D-F2F23C76A5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D811D30B-A543-4053-804D-F2F23C76A5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D811D30B-A543-4053-804D-F2F23C76A5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D811D30B-A543-4053-804D-F2F23C76A5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

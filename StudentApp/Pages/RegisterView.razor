@@ -1,0 +1,53 @@
+@page "/register"
+@using StudentApp.ViewModels
+
+@inject NavigationManager NavigationManager
+@inject RegisterViewModel Model
+@layout BlankLayout
+
+
+<div class="page-container">
+    <div class="login-container" style="display: @(_alertDisplay ? "none" : "flex")">
+        <h3><i class="fa-solid fa-user"></i>Register</h3>
+        <input type="text" placeholder="Username" @bind="@Model.User.Username" />
+        <input type="text" placeholder="Password" @bind="@Model.User.Password" />
+        <button class="register" @onclick="@RegisterUserAsync">Register</button>
+    </div>
+    <div class="alert-box" style="display: @(_alertDisplay ? "flex" : "none")">
+        <h3 class="heading">Warning</h3>
+        <div class="divider"></div>
+        <p>Must enter a Username and Password.</p>
+        <button class="finalize-button" @onclick="@ToggleAlertDialog">Close</button>
+    </div>
+</div>
+
+@code
+{
+    private bool _loginDisplay = true;
+    private bool _alertDisplay = false;
+
+
+    private async Task RegisterUserAsync()
+    {
+        if (Model.User.Password is not null & Model.User.Password is not null)
+        {
+            var response = await Model.RegisterUserAsync();
+
+            if (response)
+            {
+                Model.User = new();
+                NavigationManager.NavigateTo("/");
+            }
+        }
+        else
+        {
+            ToggleAlertDialog();
+        }
+    }
+
+    private void ToggleAlertDialog()
+    {
+        _loginDisplay = !_loginDisplay;
+        _alertDisplay = !_alertDisplay;
+    }
+}

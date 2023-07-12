@@ -1,0 +1,121 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 20rem;
+    background: white;
+    box-shadow: 0 0 4px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alert-box{
+    width: 17rem;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 0 4px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+}
+
+i{
+    margin-right: .5rem;
+}
+
+h3 {
+    color: #333;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 400;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 2px #999;
+}
+
+input {
+    height: 2rem;
+    width: 50%;
+    border: 1px solid #777;
+    border-radius: 5px;
+    text-indent: 0.8rem;
+    box-shadow: 0 0 2px #999;
+    font-size: 1.1rem;
+    padding: .3rem .7rem;
+    transition: box-shadow .15s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #777;
+}
+
+.register {
+    width: 25%;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    box-shadow: 0 0 3px #999;
+    font-size: 1rem;
+    padding: .5rem;
+}
+
+.register:active{
+    background: #666;
+}
+
+.divider {
+    width: 75%;
+    border: 1px solid #222;
+}
+
+.line{
+    width: 50%;
+    border: 1px solid #222;
+}
+
+.register{
+    margin-bottom: 1.2rem;
+}
+
+
+
+button:hover {
+    cursor: pointer;
+}
+.finalize-button{
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    box-shadow: 0 0 3px #999;
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+    height: 1.9rem;
+}
+.finalize-button{
+    padding: 0.5rem;
+    height: initial;
+}
+.heading {
+    color: #222;
+    font-size: 1.6rem;
+    margin: 0;
+    text-align: center;
+}
+p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 0.3rem 0;
+}

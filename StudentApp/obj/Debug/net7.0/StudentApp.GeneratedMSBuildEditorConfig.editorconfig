@@ -1,0 +1,73 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = StudentApp
+build_property.RootNamespace = StudentApp
+build_property.ProjectDir = /Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/BlankLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = QmxhbmtMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Components/InlineEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9JbmxpbmVFZGl0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Components/PracticeSessionDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QcmFjdGljZVNlc3Npb25EZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Components/PracticeSessionList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QcmFjdGljZVNlc3Npb25MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Pages/LoginView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW5WaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Pages/ManageSessionsView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFuYWdlU2Vzc2lvbnNWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Pages/NewSessionView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3U2Vzc2lvblZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Components/NavBar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9OYXZCYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-cj08wl036g
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Pages/RegisterView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0ZXJWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-dwfhdwktr8
+
+[/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/Pages/SettingsView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2V0dGluZ3NWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-lzon0ec2ai

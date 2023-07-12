@@ -1,0 +1,149 @@
+@page "/login"
+@using WebAPI.Domain.Models
+@using StudentApp.ViewModels
+@inject NavigationManager NavigationManager
+@layout BlankLayout
+
+@inject LoginViewModel Model
+
+<style>
+    .page-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .login-container {
+        width: 20rem;
+        background: white;
+        box-shadow: 0 0 4px black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .alert-box{
+        width: 17rem;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 4px black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0.5rem;
+        gap: 1rem;
+    }
+    
+    i{
+        margin-right: .5rem;
+    }
+    
+    h3 {
+        color: #333;
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 400;
+        text-shadow: 1px 1px 2px #999;
+        text-align: center;
+    }
+    
+    input {
+        height: 2rem;
+        width: 75%;
+        border: 1px solid #777;
+        border-radius: 5px;
+        text-indent: 0.8rem;
+        box-shadow: 0 0 2px #999;
+        font-size: 1.1rem;
+        padding: .3rem .7rem;
+        transition: box-shadow .15s;
+    }
+    
+    input:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px #777;
+    }
+    
+    button {
+        width: 25%;
+        border: none;
+        border-radius: 5px;
+        background: #333;
+        color: white;
+        box-shadow: 0 0 3px #999;
+        font-size: 1rem;
+        padding: .5rem;
+    }
+    
+    button:hover {
+        cursor: pointer;
+        background-color: #444;
+    }
+    
+    button:active{
+        background: #666;
+    }
+    
+    .divider {
+        width: 75%;
+        border: 1px solid #222
+    }
+    
+    p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin: 0 0 0.3rem 0;
+    }
+            
+                
+</style>
+<div class="page-container">
+    <div class="login-container" style="display: @(_alertDisplay ? "none" : "flex")">
+        <h3 style="margin-top: 1rem"><i class="fa-solid fa-user"></i>Sign in</h3>
+        <input type="text" placeholder="Username" @bind="@Model.User.Username"/>
+        <input type="text" placeholder="Password" @bind="@Model.User.Password"/>
+        <div class="divider"></div>
+        <div style="display: flex; width: 100%; justify-content: space-evenly; margin-bottom: 1rem">
+            <button style="margin-left: 2rem" @onclick="@TryLoginAsync">Sign In</button>
+            <button style="margin-right: 2rem" @onclick="@(() => NavigationManager.NavigateTo("/register"))">Register</button>
+        </div>
+    </div>
+    <div class="alert-box" style="display: @(_alertDisplay ? "flex" : "none")">
+        <h3>Warning</h3>
+        <p>Username or Password is incorrect.</p>
+        <div class="divider"></div>
+        <button @onclick="@ToggleAlertDialog">Close</button>
+    </div>
+</div>
+
+
+@code
+{
+    private bool _loginDisplay = true;
+    private bool _alertDisplay = false;
+
+    private async Task TryLoginAsync()
+    {
+        var response = await Model.TryLoginAsync();
+
+        if (response)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            ToggleAlertDialog();
+        }
+    }
+
+    private void ToggleAlertDialog()
+    {
+        _loginDisplay = !_loginDisplay;
+        _alertDisplay = !_alertDisplay;
+    }
+}

@@ -1,0 +1,26 @@
+﻿@using StudentApp.Services.Interfaces
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject IAuthenticationService AuthenticationService
+@using StudentApp.Components
+@using StudentApp.ViewModels
+
+<main>
+<NavBar></NavBar>
+    
+    @Body
+</main>
+
+@code{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var couldRefresh = await AuthenticationService.TryRefreshAsync();
+            if (couldRefresh is false && NavigationManager.Uri.Contains("/login") is false)
+            {
+                 NavigationManager.NavigateTo("/login");
+            }
+        }
+    }
+}

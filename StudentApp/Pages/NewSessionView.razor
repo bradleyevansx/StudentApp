@@ -1,0 +1,280 @@
+@page "/new-session"
+
+@inject NewSessionViewModel Model
+
+@using StudentApp.ViewModels
+<style>
+        h3 {
+            color: #222;
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px #999;
+            text-align: center;
+       }
+       
+       .page-container {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+       }
+       
+       .start-button-container{
+           width: 17rem;
+           background-color: whitesmoke;
+           border-radius: 5px;
+           box-shadow: 0 0 4px black;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 1.5rem 0.5rem;
+           gap: 1rem;
+       }
+       
+       .newsession-container {
+           width: 17rem;
+           background-color: whitesmoke;
+           border-radius: 5px;
+           box-shadow: 0 0 4px black;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 1.5rem 0.5rem;
+           gap: 1rem;
+       }
+       
+       .naming-focus-points-container {
+           width: 17rem;
+           background-color: whitesmoke;
+           border-radius: 5px;
+           box-shadow: 0 0 4px black;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 1.5rem 0.5rem;
+           gap: 1rem;
+       }
+       
+       .alert-box{
+           width: 17rem;
+           background-color: whitesmoke;
+           border-radius: 5px;
+           box-shadow: 0 0 4px black;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 1.5rem 0.5rem;
+           gap: 1rem;
+       }
+       
+       .naming-focus-points-inside{
+           display: flex;
+           flex-direction: column;
+       }
+       
+       
+       .divider {
+           width: 75%;
+           border: 1px solid #222;
+       }
+       
+       .timer{
+           font-size: 1.5rem;
+       }
+       
+       label {
+           font-size: 1.2rem;
+       }
+       
+       input {
+           padding: 0.2rem;
+           transition: box-shadow 0.15s;
+           border: 1px solid #777;
+           border-radius: 5px;
+           margin-bottom: .7rem;
+       }
+       
+       input:focus {
+           outline: none;
+           box-shadow: 0 0 0 4px lightgray;
+       }
+       
+       p {
+           text-align: center;
+           font-weight: 500;
+           font-size: 1.2rem;
+           margin: 0 0 0.3rem 0;
+       }
+       
+       .finish, .finalize-button{
+           border: none;
+           border-radius: 5px;
+           background: #333;
+           color: white;
+           box-shadow: 0 0 3px #999;
+           font-size: 1rem;
+           padding: 0.3rem 0.7rem;
+           width: 70%;
+           height: 1.9rem;
+       }
+       
+       .finalize-button{
+           padding: 0.5rem;
+           height: initial;
+       }
+       
+       
+       .finish:hover, .finalize-button:hover {
+           cursor: pointer;
+           background-color: #666;
+       }
+       .finish:active, .finalize-button:active {
+           background-color: #888;
+       }
+       </style>
+<div class="page-container">
+    <div class="start-button-container" style="display: @(_startButtonContainerIsHidden ? "none" : "flex")">
+        <h3 class="heading">Start Your New Practice Session</h3>
+        <button class="finish" @onclick="@InitializeSession">Start</button>
+    </div>
+    <div class="newsession-container" style="display: @(_newSessionContainerIsHidden ? "none" : "flex")">
+        <h3 class="heading">Create New Session</h3>
+        <div class="divider"></div>
+
+        <span class="timer">@_timeElapsed</span>
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" @bind="@Model.CurrentSession.Title"/>
+        </form>
+        <div class="divider"></div>
+        <button class="finish" @onclick="@Start">Start</button>
+        <button class="finish" @onclick="@Model.Stop">Pause</button>
+        <button class="finish" @onclick="@StartNewFocusPoint">New Focus Point</button>
+        <button class="finish" @onclick="@FinishSession">Finish</button>
+    </div>
+
+    <div class="naming-focus-points-container" style="display: @(_namingFocusPointContainerIsHidden ? "none" : "flex")">
+        <h3 class="heading">Name Your<br/>Focus Points:</h3>
+        <div class="divider"></div>
+        
+        @if (Model.FocusPoints.Count > 3)
+        {
+            <div class="naming-focus-points-inside" style="height: 25vh; overflow: scroll">
+                @foreach (var i in
+                    Model.FocusPoints)
+                {
+                    <div class="name-focus-point">
+                        <p>@string.Format("{0:%h} hours and {0:%m} minutes", i.Length)</p>
+                        <form>
+                            <label for="focus-point-title">Title:</label>
+                            <input type="text" id="focus-point-title" placeholder="@string.Format("{0:%h} hours and {0:%m} minutes", i.Length)" @bind="@i.Title"/>
+                        </form>
+                    </div>
+                }
+            </div>
+
+            <div class="divider"></div>
+            <button class="finalize-button" @onclick="@Model.FinalizeNewPracticeSession">Finalize Practice Session</button>
+        }
+        else
+        {
+            <div class="naming-focus-points-inside" style="height: fit-content">
+                @foreach (var i in
+                    Model.FocusPoints)
+                {
+                    <div class="name-focus-point">
+                        <p>@string.Format("{0:%h} hours and {0:%m} minutes", i.Length)</p>
+                        <form>
+                            <label for="focus-point-title">Title:</label>
+                            <input type="text" id="focus-point-title" placeholder="@string.Format("{0:%h} hours and {0:%m} minutes", i.Length)" @bind="@i.Title"/>
+                        </form>
+                    </div>
+                }
+            </div>
+
+            <div class="divider"></div>
+            <button class="finalize-button" @onclick="@Model.FinalizeNewPracticeSession">Finalize Practice Session</button>
+        }
+        
+        
+    </div>
+    <div class="alert-box" style="display: @(_alertBoxIsHidden ? "none" : "flex")">
+        <h3 class="heading">Warning</h3>
+        <div class="divider"></div>
+        <p>Name your practice session.</p>
+        <button class="finalize-button" @onclick="@ToggleAlertDialog">Close</button>
+    </div>
+</div>
+
+
+@code {
+    private string _timeElapsed = "00:00:00";
+    private bool _alertBoxIsHidden = true;
+    private bool _startButtonContainerIsHidden = false;
+    private bool _newSessionContainerIsHidden = true;
+    private bool _namingFocusPointContainerIsHidden = true;
+
+    private async Task InitializeSession()
+    {
+        _startButtonContainerIsHidden = !_startButtonContainerIsHidden;
+
+        _newSessionContainerIsHidden = !_newSessionContainerIsHidden;
+
+        if (Model.CurrentElapsedSession.ToString() != "0")
+        {
+            Model.InitializeSession();
+        }
+
+        await Start();
+    }
+
+    private async Task Start()
+    {
+        Model.Start();
+
+        await SetStopwatchIsRunning();
+    }
+
+    private async Task StartNewFocusPoint()
+    {
+        Model.StartNewFocusPoint();
+
+        await SetStopwatchIsRunning();
+    }
+
+    private void FinishSession()
+    {
+        Model.Stop();
+        if (Model.CurrentSession.Title is not null)
+        {
+            if (Model.FocusPoints.Count is 0)
+            {
+                Model.FinalizeNewPracticeSession();
+                return;
+            }
+            _newSessionContainerIsHidden = !_newSessionContainerIsHidden;
+
+            _namingFocusPointContainerIsHidden = !_namingFocusPointContainerIsHidden;
+            return;
+        }
+        ToggleAlertDialog();
+    }
+
+    private async Task SetStopwatchIsRunning()
+    {
+        while (Model.IsRunningCurrentFocusPoint)
+        {
+            _timeElapsed = Model.CurrentElapsedSession.ToString(@"hh\:mm\:ss");
+            await InvokeAsync(StateHasChanged);
+            await Task.Delay(1000);
+        }
+    }
+
+    private void ToggleAlertDialog()
+    {
+        _alertBoxIsHidden = !_alertBoxIsHidden;
+        _newSessionContainerIsHidden = !_newSessionContainerIsHidden;
+    }
+}

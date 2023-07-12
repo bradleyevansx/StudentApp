@@ -1,0 +1,53 @@
+@using WebAPI.Domain.Models
+
+
+<style>
+    .list-item{
+        background: white;
+        border: none;
+        padding: 0;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    .list-item-content{
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem;
+    }
+    
+    .list-item-content:hover{
+        background: whitesmoke;
+        cursor: pointer;
+    }
+    
+</style>
+
+@if (Items is not {} items)
+{
+    return;
+}
+
+
+@foreach (var item in items)
+    {
+        <button class="list-item" @onclick="@(() => OnItemClick(item))">
+            <div class="list-item-content">
+                <div style="display: inline">@item.Title</div>
+                <div style="display: inline">@($"{item.CreatedDateTime:yyyy MMMM dd}")</div>
+            </div>
+        </button>
+    }
+
+@code {
+    [Parameter]
+    public List<PracticeSession>? Items { get; set; }
+
+    [Parameter]
+    public EventCallback<PracticeSession> ItemClicked { get; set; }
+
+    private void OnItemClick(PracticeSession item)
+    {
+        ItemClicked.InvokeAsync(item);
+    }
+}

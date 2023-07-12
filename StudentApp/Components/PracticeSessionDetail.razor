@@ -1,0 +1,128 @@
+@using WebAPI.Domain.Models
+@using StudentApp.Interfaces
+
+@inject IPracticeSessionService PracticeSessionService
+
+
+
+
+
+<style>
+    h3, h5{
+        color: #333;
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 400;
+        margin-top: 1rem;
+        text-shadow: 1px 1px 2px #999;
+    }
+    
+    .save{
+        width: 25%;
+        border: none;
+        border-radius: 5px;
+        background: #333;
+        color: white;
+        box-shadow: 0 0 3px #999;
+        font-size: 1rem;
+        padding: .3rem .7rem;
+    }
+    
+    .save:active{
+        background: #666;
+    }
+    
+    .divider{
+        width: 70%;
+        border: 1px solid #222;
+    }
+    
+    .save:hover {
+        cursor: pointer;
+        background-color: #444;
+    }
+    h6{
+        height: 1.5rem;
+    }
+    
+    p{
+        height: 1.5rem;
+    }
+</style>
+
+@if (SelectedPracticeSession is not{} practiceSession)
+{
+    return;
+}
+
+<h3>@practiceSession.Title</h3>
+
+<div class="divider"></div>
+
+<div style="display: flex; flex-direction: column; gap: .3rem">
+    <span>
+        <h6 style="font-size: 1rem; display: inline; margin: 0;">Length:</h6>
+        <p style="display: inline; margin: 0;">@string.Format("{0:%h} hours and {0:%m} minutes", practiceSession.Length)</p>
+    </span>
+    <span>
+        <h6 style="font-size: 1rem; display: inline; margin: 0;">Date:</h6>
+        <p style="display: inline; margin: 0;">@($"{practiceSession.Date:yyyy MMMM dd}")</p>
+    </span>
+</div>
+
+@if (practiceSession.FocusPoints!.Count is not 0)
+{
+    <div class="divider"></div>
+    <div style="display: flex; flex-direction: column; gap: .3rem">
+        <h5 style="margin: 0 auto; font-size: 1.5rem">Focus Points</h5>
+        @foreach (var focusPoint in practiceSession.FocusPoints!)
+        {
+            <div style="display: flex; flex-direction: column;">
+                <InlineEditor Width="8rem" Label="Title" FieldValue="@focusPoint.Title" OnFieldValueSaved="@((value) => focusPoint.Title = value)"></InlineEditor>
+                <span>
+                    <h6 style="font-size: 1rem; display: inline; margin: 0;">Length:</h6>
+                    <p style="display: inline; margin: 0;">@string.Format("{0:%h} hours and {0:%m} minutes", focusPoint.Length)</p>
+                </span>
+            </div>
+        }
+    </div>
+}
+
+<div class="line"></div>
+
+<div style="width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;">
+    <button class="save" @onclick="OnCancel">Cancel</button>
+    <button class="save" @onclick="@(async () => { SelectedPracticeSession = practiceSession; await OnSave();})">Save</button>
+</div>
+
+@code {
+
+    [Parameter]
+    public PracticeSession? SelectedPracticeSession { get; set; }
+     
+    [Parameter]
+    public EventCallback Close { get; set; }
+
+    private async Task OnSave()
+    {
+        if (SelectedPracticeSession is not null )
+        {
+            await PracticeSessionService.UpsertPracticeSession(SelectedPracticeSession);
+        }
+
+        await Close.InvokeAsync();
+
+        SelectedPracticeSession = null;
+    }
+
+    private async Task OnCancel()
+    {
+        await Close.InvokeAsync();
+
+        SelectedPracticeSession = null;
+    }
+}

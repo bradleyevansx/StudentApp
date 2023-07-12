@@ -1,0 +1,96 @@
+@page "/manage-sessions"
+@using StudentApp.ViewModels
+@using StudentApp.Components
+@using WebAPI.Domain.Models
+
+@inject ManageSessionsViewModel Model
+
+<style>
+    .page-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .manage-sessions-container {
+        width: 20rem;
+        background: white;
+        box-shadow: 0 0 4px black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+        overflow: hidden;
+    }
+    
+    i{
+        margin-right: .5rem;
+    }
+    
+    h3 {
+        color: #333;
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 400;
+        margin-top: 1rem;
+        text-shadow: 1px 1px 2px #999;
+    }
+    
+    .divider{
+        width: 75%;
+        border: 1px solid #222;
+    }
+    
+    
+</style>
+
+@if (Model.PracticeSessions is not {} practiceSessions)
+{
+    return;
+}
+
+<div class="page-container">
+    <div class="manage-sessions-container">
+        @if (Model.SelectedPracticeSession is not null)
+        {
+            <PracticeSessionDetail SelectedPracticeSession="@Model.SelectedPracticeSession" Close="OnClose"></PracticeSessionDetail>
+        }
+        else
+        {
+            <h3><i class="fa-solid fa-bars-progress"></i>Existing Sessions</h3>
+            <div class="divider"></div>
+            if (practiceSessions.Count > 9)
+            {
+                <div style="height: 35vh; overflow: auto">
+                    <PracticeSessionList Items="practiceSessions" ItemClicked="OnClicked"></PracticeSessionList>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <PracticeSessionList Items="practiceSessions" ItemClicked="OnClicked"></PracticeSessionList>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await Model.SetPracticeSessions();
+    }
+
+    private void OnClicked(PracticeSession obj)
+    {
+        Model.SelectedPracticeSession = obj;
+    }
+
+    private void OnClose()
+    {
+        Model.SelectedPracticeSession = null;
+    }
+}

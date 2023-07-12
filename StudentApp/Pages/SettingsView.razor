@@ -1,0 +1,16 @@
+@page "/settings"
+@using StudentApp.ViewModels
+
+@inject SettingsViewModel Model
+
+<div class="page-container">
+    <div class="settings-container">
+        <h3>Settings</h3>
+        <div class="divider"></div>
+        <button style="margin-bottom: 1rem" @onclick="@Model.LogoutAsync">Logout</button>
+    </div>
+</div>
+
+@code {
+    
+}
