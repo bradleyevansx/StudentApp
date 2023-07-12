@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Serialization;
 using StudentApp.Services;
 using WebAPI.Domain.Models;
 
