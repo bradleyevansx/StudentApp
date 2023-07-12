@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{F38C3833-1B76-49FC-965E-65DAD57714EB}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.StudentApp PreferredExecutionTarget="/Applications/Firefox.app" />
+  <DisabledProjects>
+    <String>../../WebAPITest/WebAPI.Domain/WebAPI.Domain.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="StudentApp" expanded="True">
+            <Node name="StudentApp" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
