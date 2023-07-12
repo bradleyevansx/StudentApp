@@ -44,7 +44,6 @@ namespace StudentApp.Services;
         {
             var json = JsonSerializer.Serialize(newUser);
 
-
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             
             using var response = await _httpclient.PostAsync("https://bepapi.azurewebsites.net/api/Auth/register", content);

@@ -15,6 +15,10 @@ public class LoginViewModel : BaseViewModel
 
     public async Task<bool> TryLoginAsync()
     {
+        if (User.Username is null | User.Password is null)
+        {
+            return false;
+        }
         return await _userService.LoginAsync(User);
     }
 }
