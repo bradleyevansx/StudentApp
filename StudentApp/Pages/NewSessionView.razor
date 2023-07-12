@@ -108,6 +108,14 @@
            margin: 0 0 0.3rem 0;
        }
        
+       .finish{
+           width: 70%;
+       }
+       
+       .finalize-button{
+            width: 25%;
+       }
+       
        .finish, .finalize-button{
            border: none;
            border-radius: 5px;
@@ -116,7 +124,6 @@
            box-shadow: 0 0 3px #999;
            font-size: 1rem;
            padding: 0.3rem 0.7rem;
-           width: 70%;
            height: 1.9rem;
        }
        
@@ -140,9 +147,8 @@
         <button class="finish" @onclick="@InitializeSession">Start</button>
     </div>
     <div class="newsession-container" style="display: @(_newSessionContainerIsHidden ? "none" : "flex")">
-        <h3 class="heading">Create New Session</h3>
+        <h3 class="heading">New Practice Session</h3>
         <div class="divider"></div>
-
         <span class="timer">@_timeElapsed</span>
         <form>
             <label for="title">Title:</label>
@@ -152,13 +158,13 @@
         <button class="finish" @onclick="@Start">Start</button>
         <button class="finish" @onclick="@Model.Stop">Pause</button>
         <button class="finish" @onclick="@StartNewFocusPoint">New Focus Point</button>
-        <button class="finish" @onclick="@FinishSession">Finish</button>
+        <button class="finish" @onclick="@FinishSession">Name Focus Points</button>
     </div>
 
     <div class="naming-focus-points-container" style="display: @(_namingFocusPointContainerIsHidden ? "none" : "flex")">
         <h3 class="heading">Name Your<br/>Focus Points:</h3>
         <div class="divider"></div>
-        
+
         @if (Model.FocusPoints.Count > 3)
         {
             <div class="naming-focus-points-inside" style="height: 25vh; overflow: scroll">
@@ -176,7 +182,10 @@
             </div>
 
             <div class="divider"></div>
-            <button class="finalize-button" @onclick="@Model.FinalizeNewPracticeSession">Finalize Practice Session</button>
+            <div style="display: flex; width: 100%; justify-content: space-evenly; margin-bottom: 1rem">
+                <button class="finalize-button" @onclick="@FinishSession">Back</button>
+                <button class="finalize-button" @onclick="@Model.FinalizeNewPracticeSession">Finish</button>
+            </div>
         }
         else
         {
@@ -195,10 +204,13 @@
             </div>
 
             <div class="divider"></div>
-            <button class="finalize-button" @onclick="@Model.FinalizeNewPracticeSession">Finalize Practice Session</button>
+            <div style="display: flex; width: 100%; justify-content: space-evenly; margin-bottom: 1rem">
+                <button class="finalize-button" @onclick="@FinishSession">Back</button>
+                <button class="finalize-button" @onclick="@Model.FinalizeNewPracticeSession">Finish</button>
+            </div>
         }
-        
-        
+
+
     </div>
     <div class="alert-box" style="display: @(_alertBoxIsHidden ? "none" : "flex")">
         <h3 class="heading">Warning</h3>
@@ -277,4 +289,5 @@
         _alertBoxIsHidden = !_alertBoxIsHidden;
         _newSessionContainerIsHidden = !_newSessionContainerIsHidden;
     }
+
 }

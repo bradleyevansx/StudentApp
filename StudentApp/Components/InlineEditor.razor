@@ -40,7 +40,7 @@
 @if (IsEditing)
 {
     <div class="editor" style="box-sizing: border-box">
-        <button style="padding: 0; margin: 0" class="button" @onclick="SaveChanges"><i class="fa-solid fa-floppy-disk"></i></button>
+        <button style="padding: 0; margin: 0" class="button" @onclick="SaveChanges"><i class="fa-solid fa-floppy-disk" style="color: black"></i></button>
         <h6 class="label">@Label:</h6>
         <input class="input" style="width: @Width; padding: 0" type="text" value="@FieldValue" @oninput="UpdateFieldValue"/>
     </div>
@@ -48,7 +48,7 @@
 else
 {
     <div class="editor" style="box-sizing: border-box">
-        <button style="padding: 0; margin: 0" class="button" @onclick="StartEditing"><i class="fa-solid fa-pencil"></i></button>
+        <button style="padding: 0; margin: 0" class="button" @onclick="StartEditing"><i class="fa-solid fa-pencil" style="color: black"></i></button>
         <h6 class="label">@Label:</h6>
         <p class="value" style="width: @Width">@FieldValue</p>
     </div>
