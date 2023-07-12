@@ -12,10 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\WebAPITest\WebAPI.Domain\WebAPI.Domain.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Folder Include="wwwroot\images\" />
     </ItemGroup>
 

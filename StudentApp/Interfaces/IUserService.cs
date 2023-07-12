@@ -1,5 +1,3 @@
-
-using Microsoft.Azure.Cosmos;
 using WebAPI.Domain.Models;
 
 namespace StudentApp.Services;
