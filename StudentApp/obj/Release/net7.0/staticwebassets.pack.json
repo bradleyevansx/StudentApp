@@ -33,8 +33,8 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/wwwroot/staticwebapp.config.json",
-      "PackagePath": "staticwebassets/staticwebapp.config.json"
+      "Id": "/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/wwwroot/routes.json",
+      "PackagePath": "staticwebassets/routes.json"
     },
     {
       "Id": "obj/Release/net7.0/staticwebassets/msbuild.StudentApp.Microsoft.AspNetCore.StaticWebAssets.props",

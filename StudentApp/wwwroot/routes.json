@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "route": "/settings",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/manage-sessions",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/new-session",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/register",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/login",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/",
+      "rewrite": "/index.html"
+    }
+  ]
+}

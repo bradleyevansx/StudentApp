@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bS6S23g41VplC6/5ADm8PduK4LeOFj6xNUQAYn/BrEc=",
+  "Hash": "+ywClVZUwN22spS3ZYPoq47IKws/+uqRYdU8dVzipjI=",
   "Source": "StudentApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -6987,12 +6987,12 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/wwwroot/staticwebapp.config.json",
+      "Identity": "/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/wwwroot/routes.json",
       "SourceId": "StudentApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "staticwebapp.config.json",
+      "RelativePath": "routes.json",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7001,7 +7001,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/staticwebapp.config.json"
+      "OriginalItemSpec": "wwwroot/routes.json"
     }
   ]
 }
