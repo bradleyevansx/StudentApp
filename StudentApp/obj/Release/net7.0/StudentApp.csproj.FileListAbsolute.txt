@@ -827,3 +827,4 @@
 /Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/obj/Release/net7.0/refint/StudentApp.dll
 /Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/obj/Release/net7.0/StudentApp.pdb
 /Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/obj/Release/net7.0/ref/StudentApp.dll
+/Users/bradleyevans/Desktop/Student App Folder/PracticeApp/StudentApp/StudentApp/bin/Release/net7.0/routes.json
