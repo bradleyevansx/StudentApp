@@ -2,17 +2,32 @@
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
 @inject IAuthenticationService AuthenticationService
+
+@inject MainLayoutViewModel Model
+
 @using StudentApp.Components
+
 @using StudentApp.ViewModels
 @using WebAPI.Domain.Models
 
+<style>
+   
+    
+    
+
+</style>
+
 <main>
-<NavBar></NavBar>
+    <NavBar></NavBar>
+    
+    
     
     @Body
 </main>
 
 @code{
+    
+    
     
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
