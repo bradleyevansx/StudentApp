@@ -1,4 +1,5 @@
 using StudentApp.Services;
+using StudentApp.Services.Interfaces;
 using WebAPI.Domain.Models;
 
 namespace StudentApp.ViewModels;
@@ -19,6 +20,6 @@ public class LoginViewModel : BaseViewModel
         {
             return false;
         }
-        return await _userService.LoginAsync(User);
+        return await _authenticationService.LoginAsync(User);
     }
 }

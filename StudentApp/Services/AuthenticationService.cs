@@ -22,7 +22,7 @@ public class AuthenticationService : IAuthenticationService
         var authenticationResponse = await _httpService.RegisterUserAsync(newUser);
         var serializedResponse = JsonSerializer.Serialize(authenticationResponse);
 
-        await _localStorageService.SetItem("token", serializedResponse);
+        await _localStorageService.SetItemAsync("token", serializedResponse);
 
         if (authenticationResponse is not null) return true;
         return false;
@@ -30,12 +30,12 @@ public class AuthenticationService : IAuthenticationService
 
     public async Task<bool> TryRefreshAsync()
     {
-        var authenticationResponse = await _localStorageService.GetItem<AuthenticationResponse>("token");
+        var authenticationResponse = await _localStorageService.GetItemAsync<AuthenticationResponse>("token");
         if (authenticationResponse is null) return false;
 
         var newAuthenticationResponse = await _httpService.TryAuthUserAsync(authenticationResponse.refreshTokenId);
         var serializedResponse = JsonSerializer.Serialize(newAuthenticationResponse);
-        await _localStorageService.SetItem("token", serializedResponse);
+        await _localStorageService.SetItemAsync("token", serializedResponse);
         return true;
     }
     public async Task<bool> LoginAsync(UserInfo user)
@@ -44,7 +44,7 @@ public class AuthenticationService : IAuthenticationService
 
         var serializedResponse = JsonSerializer.Serialize(authenticationResponse);
 
-        await _localStorageService.SetItem("token", serializedResponse);
+        await _localStorageService.SetItemAsync("token", serializedResponse);
 
         if (authenticationResponse is not null) return true;
         else return false;

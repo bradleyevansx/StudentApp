@@ -4,6 +4,7 @@
 @inject IAuthenticationService AuthenticationService
 @using StudentApp.Components
 @using StudentApp.ViewModels
+@using WebAPI.Domain.Models
 
 <main>
 <NavBar></NavBar>
@@ -12,6 +13,7 @@
 </main>
 
 @code{
+    
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -21,6 +23,7 @@
             {
                  NavigationManager.NavigateTo("/login");
             }
+            
         }
     }
 }

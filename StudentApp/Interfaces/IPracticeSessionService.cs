@@ -4,8 +4,8 @@ namespace StudentApp.Interfaces;
 
 public interface IPracticeSessionService
 {
-    Task CreateNewPracticeSession(PracticeSession practiceSession);
-    Task<List<PracticeSession>?> GetPracticeSessions();
+    Task CreateNewPracticeSessionAsync(PracticeSession practiceSession);
+    Task<List<PracticeSession>?> GetPracticeSessionsAsync();
 
-    Task UpsertPracticeSession(PracticeSession practiceSession);
+    Task UpsertPracticeSessionAsync(PracticeSession practiceSession);
 }

@@ -1,4 +1,5 @@
 using StudentApp.Services;
+using StudentApp.Services.Interfaces;
 using WebAPI.Domain.Models;
 
 namespace StudentApp.ViewModels;
