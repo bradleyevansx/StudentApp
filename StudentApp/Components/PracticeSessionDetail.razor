@@ -111,7 +111,7 @@
     {
         if (SelectedPracticeSession is not null )
         {
-            await PracticeSessionService.UpsertPracticeSession(SelectedPracticeSession);
+            await PracticeSessionService.UpsertPracticeSessionAsync(SelectedPracticeSession);
         }
 
         await Close.InvokeAsync();

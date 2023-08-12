@@ -5,16 +5,16 @@ namespace StudentApp.ViewModels;
 
 public class RegisterViewModel : BaseViewModel
 {
-    private IUserService _userService;
+    private IAuthenticationService _authenticationService;
     public UserInfo User = new();
 
-    public RegisterViewModel(IUserService userService)
+    public RegisterViewModel(IAuthenticationService authenticationService)
     {
-        _userService = userService;
+        _authenticationService = authenticationService;
     }
 
     public async Task<bool> RegisterUserAsync()
     {
-        return await _userService.RegisterUserAsync(User);
+        return await _authenticationService.RegisterUserAsync(User);
     }
 }

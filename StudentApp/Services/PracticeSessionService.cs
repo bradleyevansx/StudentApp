@@ -5,12 +5,12 @@ namespace StudentApp.Services;
 
 public class MockPracticeSessionService : IPracticeSessionService
 {
-    public Task CreateNewPracticeSession(PracticeSession practiceSession)
+    public Task CreateNewPracticeSessionAsync(PracticeSession practiceSession)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<List<PracticeSession>?> GetPracticeSessions()
+    public async Task<List<PracticeSession>?> GetPracticeSessionsAsync()
     {
          List<PracticeSession> practiceSessions = new List<PracticeSession>
         {
@@ -142,7 +142,7 @@ public class MockPracticeSessionService : IPracticeSessionService
          return practiceSessions;
     }
 
-    public Task UpsertPracticeSession(PracticeSession practiceSession)
+    public Task UpsertPracticeSessionAsync(PracticeSession practiceSession)
     {
         throw new NotImplementedException();
     }
@@ -159,29 +159,29 @@ public class PracticeSessionService : IPracticeSessionService
         _httpService = httpService;
     }
 
-    public async Task CreateNewPracticeSession(PracticeSession practiceSession)
+    public async Task CreateNewPracticeSessionAsync(PracticeSession practiceSession)
     {
-        var token = await _localStorageService.GetItem<AuthenticationResponse>("token");
+        var token = await _localStorageService.GetItemAsync<AuthenticationResponse>("token");
 
         practiceSession.userId = token.userId;
 
         await _httpService.PostNewPracticeSessionAsync(practiceSession);
     }
 
-    public async Task<List<PracticeSession>?> GetPracticeSessions()
+    public async Task<List<PracticeSession>?> GetPracticeSessionsAsync()
     {
-        var token = await _localStorageService.GetItem<AuthenticationResponse>("token");
+        var token = await _localStorageService.GetItemAsync<AuthenticationResponse>("token");
 
         var header = token.accessToken;
 
         var userId = token.userId;
 
-        var response = await _httpService.GetAsync(userId, header);
+        var response = await _httpService.GetPracticeSessionsByUserIdAsync(userId, header);
 
         return response;
     }
 
-    public async Task UpsertPracticeSession(PracticeSession practiceSession)
+    public async Task UpsertPracticeSessionAsync(PracticeSession practiceSession)
     {
         await _httpService.UpsertPracticeSessionAsync(practiceSession);
     }

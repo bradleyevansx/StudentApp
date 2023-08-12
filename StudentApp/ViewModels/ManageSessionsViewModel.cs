@@ -19,6 +19,6 @@ public class ManageSessionsViewModel : BaseViewModel
 
     public async Task SetPracticeSessions()
     {
-        PracticeSessions = await _practiceSessionService.GetPracticeSessions();
+        PracticeSessions = await _practiceSessionService.GetPracticeSessionsAsync();
     }
 }

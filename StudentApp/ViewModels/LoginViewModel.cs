@@ -6,11 +6,11 @@ namespace StudentApp.ViewModels;
 public class LoginViewModel : BaseViewModel
 {
     public UserInfo User { get; set; } = new();
-    private readonly IUserService _userService;
+    private readonly IAuthenticationService _authenticationService;
 
-    public LoginViewModel(IUserService userService)
+    public LoginViewModel(IAuthenticationService authenticationService)
     {
-        _userService = userService;
+        _authenticationService = authenticationService;
     }
 
     public async Task<bool> TryLoginAsync()

@@ -19,7 +19,7 @@ public class SettingsViewModel : BaseViewModel
 
     public async Task LogoutAsync()
     {
-        await _localStorageService.RemoveItem("token");
+        await _localStorageService.RemoveItemAsync("token");
         
         _navigationManager.NavigateTo("/login");
     }

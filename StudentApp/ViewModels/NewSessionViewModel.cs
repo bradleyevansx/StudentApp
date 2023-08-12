@@ -70,7 +70,7 @@ public class NewSessionViewModel : BaseViewModel
         
         
 
-        _practiceSessionService.CreateNewPracticeSession(CurrentSession);
+        _practiceSessionService.CreateNewPracticeSessionAsync(CurrentSession);
 
         
         

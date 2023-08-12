@@ -24,8 +24,7 @@ builder.Services
     .AddScoped<ILocalStorageService, LocalStorageService>()
     .AddScoped<IPracticeSessionService, PracticeSessionService>()
     .AddScoped<IAuthenticationService, AuthenticationService>()
-    .AddScoped<IHttpService, HttpService>()
-    .AddScoped<IUserService, UserService>();
+    .AddScoped<IHttpService, HttpService>();
 
 builder.Services.AddScoped<HttpClient>(s => {
     var httpClient = new HttpClient();

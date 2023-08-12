@@ -99,7 +99,7 @@ namespace StudentApp.Services;
             return authenticationResponse;
         }
 
-        public async Task<List<PracticeSession>?> GetAsync(string userId, string accessToken)
+        public async Task<List<PracticeSession>?> GetPracticeSessionsByUserIdAsync(string userId, string accessToken)
         {
             SetAuthenticationHeaders(accessToken);
             
